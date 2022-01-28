@@ -1,0 +1,14 @@
+ALGORITHM trie-insertion
+VAR
+    t:array_of integer ;
+    i,j,aux:integer;
+BEGIN
+    FOR i FROM 1 TO t.length-1 DO
+     FOR j FROM i-1 TO 0 Step -1 DO
+      IF (t[i]<t[j]) THEN
+       aux:= t[i];
+       t[i]:= t[j];
+       t[j]:= aux;
+      END IF
+    END FOR
+END
